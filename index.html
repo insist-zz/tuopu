@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>familyBroad</title>
+		<link rel="stylesheet" type="text/css" href="css/comcss/emui.css"/>
+		<link rel="stylesheet" href="css/comcss/com.css" />
+	</head>
+	<style>
+		html,body{background: white;width: 100%;height: 100%;}
+		#tree{width: 100%;height: 100%;background: #00667d;}
+		.toolbox{width: auto;height: auto;background: #093946;}
+		.tooltitle{padding: 6px;text-align: center;color: white;font-size: 20px;line-height: 40px;}
+		.tool-hr{width: auto;height: 30px;}
+		.th-item{width: auto;height: 30px;margin-right: 10px;float: left;}
+		.th-item span:first-child{font-size: 14px;float: left;line-height: 30px;margin-right: 6px;color: white;padding: 0 2px;}
+		.th-item span:last-child{font-size: 14px;float: left;line-height: 30px;color: #caab2d;padding: 0 2px;}
+	</style>
+	<body>
+		<div id="app">
+			<div id="tree"></div>
+			<div class="toolbox">
+				<p class="tooltitle">家宽指标</p>
+				<div class="tool-hr">
+					<p class="th-item">
+						<span>成功率:</span>
+						<span>98.1%</span>
+					</p>	
+					<p class="th-item">
+						<span>tcp成功率:</span>
+						<span>98.1%</span>
+					</p>
+					<p class="th-item">
+						<span>下载速度:</span>
+						<span>728kbps</span>
+					</p>
+				</div>
+				<div class="tool-hr">
+					<p class="th-item">
+						<span>成功率:</span>
+						<span>98.1%</span>
+					</p>	
+					<p class="th-item">
+						<span>tcp成功率:</span>
+						<span>98.1%</span>
+					</p>
+				</div>
+				<div class="tool-hr">
+					<p class="th-item">
+						<span>成功率:</span>
+						<span>98.1%</span>
+					</p>	
+					<p class="th-item">
+						<span>tcp成功率:</span>
+						<span>98.1%</span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/comjs/vue2.5.16.js"></script>
+	<script src="js/comjs/emui.js"></script>
+	<script src="js/comjs/chart4m.js"></script>
+	<script src="js/comjs/rely.js"></script>
+	<script>
+	myChart = echarts.init(document.getElementById('tree'));	
+	
+	myChart.showLoading();
+	//['呼和浩特','包头','乌海','赤峰','通辽','鄂尔多斯','呼伦贝尔','巴彦淖尔','乌兰察布','锡林郭勒','兴安盟','阿拉善'],
+	var data = {
+	    name: "内蒙",
+	    children: [
+	        {
+	            name: "呼和浩特",
+	            children: [
+		            {
+		            	name:'BRAS1',value:"10",
+		            	children:[
+		            		{
+		            			name:'OLT1',value:"10",
+				            	children:[
+				            		{
+				            			name:'PON端口',value:"10",
+						            	children:[
+						            		{
+						            			name:'ONT/ONU1',value:"10",
+								            	children:[
+								            		{name:'用户1',value:"10"},
+								            		{name:'用户2',value:"10"},
+								            		{name:'用户3',value:"10"}
+								            	]
+						            		},
+						            		{
+						            			name:'ONT/ONU2',value:"10",
+								            	children:[
+								            		{name:'用户1',value:"10"},
+								            		{name:'用户2',value:"10"},
+								            		{name:'用户3',value:"10"}
+								            	]
+						            		},
+						            		{
+						            			name:'ONT/ONU3',value:"10",
+								            	children:[
+								            		{name:'用户1',value:"10"},
+								            		{name:'用户2',value:"10"},
+								            		{name:'用户3',value:"10"}
+								            	]
+						            		}
+						            	]
+				            		}
+				            	]
+		            		},
+		            		{
+		            			name:'OLT2',value:"10",
+				            	children:[
+				            		{
+				            			name:'PON端口',value:"10",
+						            	children:[
+						            		{
+						            			name:'ONT/ONU1',value:"10",
+								            	children:[
+								            		{name:'用户1',value:"10"},
+								            		{name:'用户2',value:"10"},
+								            		{name:'用户3',value:"10"}
+								            	]
+						            		},
+						            		{
+						            			name:'ONT/ONU2',value:"10",
+								            	children:[
+								            		{name:'用户1',value:"10"},
+								            		{name:'用户2',value:"10"},
+								            		{name:'用户3',value:"10"}
+								            	]
+						            		},
+						            		{
+						            			name:'ONT/ONU3',value:"10",
+								            	children:[
+								            		{name:'用户1',value:"10"},
+								            		{name:'用户2',value:"10"},
+								            		{name:'用户3',value:"10"}
+								            	]
+						            		}
+						            	]
+				            		}
+				            	]
+		            		}
+		            	]
+		            },
+		            {
+		            	name:'BRAS2',value:"20",
+		            	itemStyle:{
+			            	color:'#f93445',
+			            	borderColor:'white',
+			            	borderWidth:6,
+			            	borderType:'solid'
+			            },
+		            	children:[
+		            		{
+		            			name:'OLT1',value:"10",
+				            	children:[
+				            		{
+				            			name:'PON端口',value:"10",
+						            	children:[
+						            		{
+						            			name:'ONT/ONU1',value:"10",
+								            	children:[
+								            		{name:'用户1',value:"10"},
+								            		{name:'用户2',value:"10"},
+								            		{name:'用户3',value:"10"}
+								            	]
+						            		},
+						            		{
+						            			name:'ONT/ONU2',value:"10",
+								            	children:[
+								            		{name:'用户1',value:"10"},
+								            		{name:'用户2',value:"10"},
+								            		{name:'用户3',value:"10"}
+								            	]
+						            		},
+						            		{
+						            			name:'ONT/ONU3',value:"10",
+								            	children:[
+								            		{name:'用户1',value:"10"},
+								            		{name:'用户2',value:"10"},
+								            		{name:'用户3',value:"10"}
+								            	]
+						            		}
+						            	]
+				            		}
+				            	]
+		            		},
+		            		{
+		            			name:'OLT2',value:"20",
+		            			itemStyle:{
+					            	color:'#f93445',
+					            	borderColor:'white',
+					            	borderWidth:6,
+					            	borderType:'solid'
+					            },
+				            	children:[
+				            		{
+				            			name:'PON端口',value:"10",
+				            			itemStyle:{
+							            	color:'#f93445',
+							            	borderColor:'white',
+							            	borderWidth:6,
+							            	borderType:'solid'
+							            },
+						            	children:[
+						            		{
+						            			name:'ONT/ONU1',value:"10",
+						            			itemStyle:{
+									            	color:'#f93445',
+									            	borderColor:'white',
+									            	borderWidth:6,
+									            	borderType:'solid'
+									            },
+								            	children:[
+								            		{name:'用户1',value:"10"},
+								            		{name:'用户2',value:"10"},
+								            		{name:'用户3',value:"10"}
+								            	]
+						            		},
+						            		{
+						            			name:'ONT/ONU2',value:"10",
+						            			itemStyle:{
+									            	color:'#f93445',
+									            	borderColor:'white',
+									            	borderWidth:6,
+									            	borderType:'solid'
+									            },
+								            	children:[
+								            		{
+								            			name:'用户1',value:"10",
+									            		itemStyle:{
+											            	color:'#f93445',
+											            	borderColor:'white',
+											            	borderWidth:6,
+											            	borderType:'solid'
+											            }
+								            		},
+								            		{name:'用户2',value:"10"},
+								            		{name:'用户3',value:"10"}
+								            	]
+						            		},
+						            		{
+						            			name:'ONT/ONU3',value:"10",
+								            	children:[
+								            		{name:'用户1',value:"10"},
+								            		{name:'用户2',value:"10"},
+								            		{name:'用户3',value:"10"}
+								            	]
+						            		}
+						            	]
+				            		}
+				            	]
+		            		}
+		            	]
+		            }
+	            ]
+	        },
+	        {
+	           name: "包头",
+	           children: [
+	           ]
+	          },
+	        {
+	           name: "乌海",
+	           children: [
+	           ]
+	        },
+	        {
+	           name: "赤峰",
+	           children: [
+	           ]
+	        },
+	        {
+	           name: "通辽",
+	           children: [
+	           ]
+	        },
+	        {
+	           name: "鄂尔多斯",
+	           children: [
+	           ]
+	        },
+	        {
+	           name: "呼伦贝尔",
+	           children: [
+	           ]
+	        },
+	        {
+	           name: "巴彦淖尔",
+	           children: [
+	           ]
+	        },
+	        {
+	           name: "乌兰察布",
+	           children: [
+	           ]
+	        },
+	        {
+	           name: "锡林郭勒",
+	           children: [
+	           ]
+	        },
+	        {
+	           name: "兴安盟",
+	           children: [
+	           ]
+	        },
+	        {
+	           name: "阿拉善",
+	           children: [
+	           ]
+	        }
+	    ]
+	};
+
+	
+	myChart.hideLoading();
+	
+	myChart.setOption({
+		title : {
+		        text : '网络告警监控拓扑图',
+		        textStyle:{
+		        	color:'white',
+		        	fontSize:30,
+		        	lineHeight:24
+		        }
+		    },
+	    tooltip: {
+	        trigger: 'item',
+	        triggerOn: 'mousemove',
+	        enterable:true,
+	        //backgroundColor:"",
+	        formatter:function(params){
+	        	console.log(params)
+
+	        	var res='<div class="toolbox">'+
+							'<p class="tooltitle">家宽指标</p>'+
+							'<div class="tool-hr">'+
+								'<p class="th-item">'+
+									'<span>成功率:</span>'+
+									'<span>98.1%</span>'+
+								'</p>'+
+								'<p class="th-item">'+
+									'<span>tcp成功率:</span>'+
+									'<span>98.1%</span>'+
+								'</p>'+
+								'<p class="th-item">'+
+									'<span>下载速度:</span>'+
+									'<span>728kbps</span>'+
+								'</p>'+
+							'</div>'+
+							'<div class="tool-hr">'+
+								'<p class="th-item">'+
+									'<span>成功率:</span>'+
+									'<span>98.1%</span>'+
+								'</p>'+
+								'<p class="th-item">'+
+									'<span>tcp成功率:</span>'+
+									'<span>98.1%</span>'+
+								'</p>'+
+								'<p class="th-item">'+
+									'<span>下载速度:</span>'+
+									'<span>728kbps</span>'+
+								'</p>'+
+							'</div>'+
+						'</div>'
+				console.log(res)		
+	        	return res;
+	        	
+	        },
+	        backgroundColor:'#093946',
+	        padding:10
+	    },
+	    legend: {
+	    	show:false,
+	        top: '2%',
+	        left: '3%',
+	        orient: 'vertical',
+	        data: [{
+	            name: 'tree1',
+	            icon: 'rectangle'
+	        }],
+	        borderColor: '#c23531'
+	    },
+	    series:[
+	        {
+	            type: 'tree',
+	            name: 'tree',
+	            symbol:'circle',//节点类型
+	            symbolSize: 20,//节点大小
+	            initialTreeDepth:5,//展开层级
+	            top: '5%',
+	            left: '7%',
+	
+	            label: {
+	                normal: {
+	                    position: 'left',
+	                    verticalAlign: 'middle',
+	                    align: 'right',
+	                    color:'white',
+	                    fontSize:20,
+	                }
+	            },
+	            itemStyle:{
+	            	color:'white',
+	            	borderColor:'#07a72a',
+	            	borderWidth:6,
+	            	borderType:'solid'
+	            },
+				lineStyle:{
+					color:'white',
+					width:1,
+					curveness:0.5
+				},
+	            leaves: {
+	                label: {
+	                    normal: {
+	                        position: 'right',
+	                        verticalAlign: 'middle',
+	                        align: 'left'
+	                    }
+	                }
+	            },
+	
+	            expandAndCollapse: true,
+	
+	            animationDuration: 550,
+	            animationDurationUpdate: 750,
+				
+	            data: [data],
+	        }
+	    ]
+	});
+	
+	//$('#tree').css('background','#00667d')
+	</script>
+</html>
